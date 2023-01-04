@@ -1,7 +1,16 @@
 import { useState, useEffect} from 'react';
-import Movie from '../components/Movie';
+import {Link} from "react-router-dom";
+import Loading from "../components/Loading";
+import styles from "./Home.module.css";
+import Slide from "../components/Slide";
+import navList from "../atom/NavList";
+import axios from "axios";
 
-function Home() {
+/**
+ * 홈 화면에 출력되는 형식들 다루는 함수
+ * @returns 홈 화면에 출력하는 틀
+ */
+/*function Home() {
     const [loading, setLoading] = useState(true);
     const [movies, setMovies] = useState([]);
     // 요즘은 async-await을 then보다 많이 쓰기 때문에 바꿔보자.
@@ -16,18 +25,18 @@ function Home() {
     useEffect(() => {
         getMovies();
     }, [])
-    /*useEffect(() => {
-        fetch(`https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year`)
-        .then((response) => response.json())
-        .then((json) => {
-            setMovies(json.data.movies);
-            setLoading(false);
-        });
-    }, []);*/
+    //useEffect(() => {
+        //fetch(`https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year`)
+        //.then((response) => response.json())
+        //.then((json) => {
+            //setMovies(json.data.movies);
+            //setLoading(false);
+        //});
+    //}, []);
     console.log(movies);
     return (
         <div>
-            {loading ? <h1>Loading...</h1> : 
+            {loading ? <Loading /> : 
                 <div>
                     {movies.map(movie => 
                         <Movie 
@@ -44,8 +53,57 @@ function Home() {
             }
         </div>
     );
+}*/
+function Home() {
+    const [ movieContents, setMovieContents ] = useState([])
+    
+    useEffect(() => {
+      const request = navList.map(({ title, path }) => {
+        return axios.get('https://yts.mx/api/v2/list_movies.json?' + path, {
+          params: {
+            limit: 10,
+            sort_by: 'year',
+          }
+        })
+      })
+  
+      axios.all(request)
+        .then(axios.spread(async (...response) => {
+          const data = await response.map(res => {
+            if (res.status === 200) {
+              return res.data.data.movies
+            }
+          })
+          
+          console.log(data)
+          setMovieContents(data)
+        })) 
+    }, [])
+  
+    return (
+        <div className={styles.container}>
+          {navList.map((slide, idx) => {
+            return (
+              <div className={styles.slide__box} key={idx}>
+                  <h3 className={styles.title}>
+                    <Link to={`/page/${slide.path}/1`} key={idx}>
+                      <i className="fas fa-external-link-alt"></i>
+                      <span>{slide.title} Movie</span>
+                    </Link>
+                  </h3>
+                  { movieContents && movieContents.length === 0 ? (
+                      <Loading key={idx}/>
+                    ) : (
+                      <Slide movieContents={movieContents[idx]} key={idx}/>
+                    )
+                  }
+              </div>
+            )
+          })}
+        </div>
+    )
 }
-
+  
 export default Home;
 
 // React Router은 다이내믹(동적) URL을 지원해주기도 한다.

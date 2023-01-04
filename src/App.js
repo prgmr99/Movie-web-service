@@ -7,7 +7,7 @@ import {
 import Home from "./routes/Home";
 import Detail from "./routes/Detail";
 
-function App() {
+/*function App() {
     return (
     <Router basename={process.env.PUBLIC_URL}>
         <Routes>
@@ -18,6 +18,30 @@ function App() {
             </Route>
         </Routes>
     </Router>);
+}*/
+import List from "./routes/List";
+import Nav from "./components/Nav"
+import {
+    RecoilRoot,
+    atom,
+    selector,
+    useRecoilState,
+    useRecoilValue,
+} from 'recoil';
+  
+function App() {
+    return (
+      <RecoilRoot >
+        <Router>
+          <Nav />
+          <Routes>
+            <Route path="/page/:detail/:num" element={<List />} />
+            <Route path="/movie/:id" element={<Detail />} />
+            <Route path={process.env.PUBLIC_URL + "/"} element={<Home />} />
+          </Routes>
+        </Router>
+      </RecoilRoot>
+    )
 }
 
 export default App;
