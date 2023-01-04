@@ -11,18 +11,16 @@
       Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     background-image: linear-gradient(
       to right top,
-      #f9f871,
-      #ffe469,
-      #ffd166,
-      #ffbe66,
-      #ffac69,
-      #ff9d6d,
-      #ff8f73,
-      #ff827b,
-      #fc7486,
-      #f46993,
-      #e861a2,
-      #d65db1
+      #0078FF,
+      #0A82FF,
+      #148CFF,
+      #1E96FF,
+      #28A0FF,
+      #32AAFF,
+      #3CB4FF,
+      #46BEFF,
+      #50C8FF,
+      #5AD2FF
     );
     height: 100%;
   }

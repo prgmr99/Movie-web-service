@@ -32,12 +32,12 @@ import {
 function App() {
     return (
       <RecoilRoot >
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <Nav />
           <Routes>
             <Route path="/page/:detail/:num" element={<List />} />
             <Route path="/movie/:id" element={<Detail />} />
-            <Route path={process.env.PUBLIC_URL + "/"} element={<Home />} />
+            <Route path="/" element={<Home />} />
           </Routes>
         </Router>
       </RecoilRoot>
