@@ -85,13 +85,14 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![image](https://user-images.githubusercontent.com/76275691/209681793-dbc032d2-987b-4bd0-8c15-01df2482e7c8.png)
+![image](https://user-images.githubusercontent.com/76275691/210699598-9f2bd1fa-1308-4ad0-9ffa-4d2036a084a2.png)
+![image](https://user-images.githubusercontent.com/76275691/210699715-2d44765a-3438-44c6-bb7a-4e0c63969e3b.png)
 
-Start learning Javascript with creating a chrome app that contains current time, user's data, a quote, weather information, and To Dos.
+Learning React basics with creating a simple movie web service that contains movies' data.
 
 Goals:
-* Learning interaction between html and Javascript.
-* Learning major factors of Javascript.
+* Learning difference between React and Javascript.
+* Learning useState, useEffect, useParams, prop, JSX, and etc.
 
 <!--Use the `BLANK_README.md` to get started.-->
 
@@ -109,7 +110,8 @@ Goals:
 * [![Laravel][Laravel.com]][Laravel-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]-->
-* Html
+* [![React][React.js]][React-url]
+* HTML
 * CSS
 * Javascript
 
@@ -120,7 +122,7 @@ Goals:
 <!-- GETTING STARTED -->
 ## Getting Started
 
-You just need to access https://prgmr99.github.io/Momonton/.
+You just need to access [https://prgmr99.github.io/Momonton/](https://prgmr99.github.io/Movie-web-service/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -140,12 +142,11 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Greeting User
-- [x] Add background
-- [x] Add clock with current time
-- [x] Add quotes
-- [x] Add todos
-- [x] Add weather
+- [x] Use useState, useEffect to get movies' data.
+- [x] Router for Link
+- [x] Create components to organize
+- [x] Deploy
+
 
 <!--See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).-->
 
@@ -171,12 +172,12 @@ Don't forget to give the project a star! Thanks again!
 
 
 
-<!-- LICENSE -->
+<!-- LICENSE 
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>-->
 
 
 
@@ -208,7 +209,8 @@ Use this space to list resources you find helpful and would like to give credit 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>-->
 
 
-
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 <!--[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
