@@ -122,7 +122,7 @@ Goals:
 <!-- GETTING STARTED -->
 ## Getting Started
 
-You just need to access [https://prgmr99.github.io/Momonton/](https://prgmr99.github.io/Movie-web-service/).
+You just need to access [https://prgmr99.github.io/Movie-web-service/].
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
